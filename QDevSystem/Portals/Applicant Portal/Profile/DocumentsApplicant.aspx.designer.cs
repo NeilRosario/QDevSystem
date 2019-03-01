@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QDevSystem.Portals.Applicant_Portal.Jobs
+namespace QDevSystem.Portals.Applicant_Portal.Profile
 {
 
 
-    public partial class ViewCompanyJobs
+    public partial class DocumentsApplicant
     {
     }
 }

@@ -1,9 +1,21 @@
 ﻿<%@ Page Title="Edit Job" Language="C#" MasterPageFile="~/Portals/BP Portal/BP_Portal.Master" AutoEventWireup="true" CodeBehind="EditJobBP.aspx.cs" Inherits="QDevSystem.Portals.BP_Portal.Jobs.EditJobBP" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="box-body">
+        <div class="form-horizontal">
+            <br />
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="~/Portals/BP Portal/HomeBP.aspx" runat="server">Home</a></li>
+                <li class="breadcrumb-item"><a href="~/Portals/BP Portal/Jobs/ViewJobsBP.aspx" runat="server">Job List</a></li>
+                <li class="breadcrumb-item">Edit Job</li>
+            </ol>
+            <div>
+                <hr />
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="jumbotron">
-
             <h2>
                 <b>
                     <asp:Literal ID="ltJID" runat="server" Visible="true" /></b>
@@ -44,9 +56,9 @@
                             <div class="form-group">
                                 <div class="col-lg-8">
                                     <asp:RadioButtonList ID="rdStatus" runat="server" CssClass="col-lg-8">
-                                    <asp:ListItem Text="Open" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="Close" Value="2"></asp:ListItem>
-                                </asp:RadioButtonList>
+                                        <asp:ListItem Text="Open" Value="1"></asp:ListItem>
+                                        <asp:ListItem Text="Closed" Value="2"></asp:ListItem>
+                                    </asp:RadioButtonList>
                                 </div>
                             </div>
                         </div>

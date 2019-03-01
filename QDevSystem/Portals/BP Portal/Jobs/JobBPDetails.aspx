@@ -1,6 +1,19 @@
 ﻿<%@ Page Title="Job Details" Language="C#" MasterPageFile="~/Portals/BP Portal/BP_Portal.Master" AutoEventWireup="true" CodeBehind="JobBPDetails.aspx.cs" Inherits="QDevSystem.Portals.BP_Portal.Jobs.JobBPDetails" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="box-body">
+        <div class="form-horizontal">
+            <br />
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="~/Portals/BP Portal/HomeBP.aspx" runat="server">Home</a></li>
+                <li class="breadcrumb-item"><a href="~/Portals/BP Portal/Jobs/ViewJobsBP.aspx" runat="server">Job List</a></li>
+                <li class="breadcrumb-item">Job Details</li>
+            </ol>
+            <div>
+                <hr />
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="jumbotron">
             <h2>

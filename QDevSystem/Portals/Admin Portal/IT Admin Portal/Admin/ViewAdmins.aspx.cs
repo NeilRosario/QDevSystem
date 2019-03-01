@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace QDevSystem
+namespace QDevSystem.Portals.Admin_Portal.IT_Admin_Portal.Admin
 {
-    public partial class test : System.Web.UI.Page
+    public partial class ViewAdmins : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

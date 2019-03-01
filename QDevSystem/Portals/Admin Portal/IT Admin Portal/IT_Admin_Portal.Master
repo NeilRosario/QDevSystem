@@ -1,0 +1,92 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="IT_Admin_Portal.master.cs" Inherits="QDevSystem.Portals.Admin_Portal.IT_Admin_Portal.IT_Admin_Portal" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
+    <title><%: Page.Title %> - QDev Manpower Systems</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                </div>
+                <div class="navbar-collapse collapse">                    
+                    <ul class="nav navbar-nav">   
+                        <li><a runat="server" href="~/Portals/Admin Portal/IT Admin Portal/Applicant/ViewApplicantsAdmin.aspx">Applicants</a></li>
+                        <li><a runat="server" href="~/Portals/Admin Portal/IT Admin Portal/BP/ViewCompaniesAdmin.aspx">Companies</a></li>
+                        <li><a runat="server" href="~/Portals/Admin Portal/IT Admin Portal/Admin/ViewAdmins.aspx">Admins</a></li>
+                        <li><a runat="server" href="~/Portals/Admin Portal/IT Admin Portal/Jobs/ViewJobsAdmin.aspx">Jobs</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a href="#"><asp:Label runat="server" id="lblShowUser"></asp:Label></a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a runat="server" href="~/Portals/Admin/IT Admin Portal/HomeITAdmin.aspx">Home</a></li>
+                        <li><asp:LinkButton runat="server" id="btnLogOut" onclick="Logoutclick">Log Out</asp:LinkButton></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="container-fluid body-content" style="padding: 0">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+
+                
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p class="middle">&copy; <%: DateTime.Now.Year %> - QDev Manpower Systems - IT Admin Portal </p>
+            </footer>
+            
+    <style>
+        .middle{
+            text-align:center;
+        }
+    </style>
+        </div>
+    </form>
+</body>
+</html>

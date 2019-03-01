@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QDevSystem
+namespace QDevSystem.Portals.Admin_Portal.IT_Admin_Portal.Admin
 {
 
 
-    public partial class Contact
+    public partial class ViewAdmins
     {
     }
 }

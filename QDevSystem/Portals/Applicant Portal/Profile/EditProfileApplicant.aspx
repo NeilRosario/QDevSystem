@@ -13,7 +13,19 @@
             height: auto;
         }
     </style>
-
+    <div class="box-body">
+        <div class="form-horizontal">
+            <br />
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="~/Portals/Applicant Portal/HomeApplicant.aspx" runat="server">Home</a></li>
+                <li class="breadcrumb-item"><a href="~/Portals/Applicant Portal/Profile/ProfileApplicant.aspx" runat="server">Home</a></li>
+                <li class="breadcrumb-item">Edit Profile</li>
+            </ol>
+            <div>
+                <hr />
+            </div>
+        </div>
+    </div>
     <div class="jumbotron">
         <div class="container">
             <div class="col-md-3">
@@ -80,10 +92,10 @@
                 <div class="form-group text-center">
                     <asp:Button ID="btnUpdate" runat="server"
                         Class="btn block btn-success"
-                        
+                        OnClick="btnUpdate_Click"
                         Text="Update"></asp:Button>
 
-                    <a href="~/Portals/BP Portal/HomeBP.aspx" runat="server" class="btn btn-secondary">Go Back</a>
+                    <a href="~/Portals/Applicant Portal/Profile/ProfileApplicant.aspx" runat="server" class="btn btn-secondary">Go Back</a>
                 </div>
 
             </div>

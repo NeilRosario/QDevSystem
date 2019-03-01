@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QDevSystem
+namespace QDevSystem.Portals.Admin_Portal.IT_Admin_Portal.Applicant
 {
 
 
-    public partial class About
+    public partial class ViewApplicantsAdmin
     {
     }
 }

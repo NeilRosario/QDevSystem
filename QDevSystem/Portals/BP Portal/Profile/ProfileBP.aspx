@@ -1,7 +1,18 @@
 ﻿<%@ Page Title="Profile" Language="C#" MasterPageFile="~/Portals/BP Portal/BP_Portal.Master" AutoEventWireup="true" CodeBehind="ProfileBP.aspx.cs" Inherits="QDevSystem.Portals.BP_Portal.Profile.ProfileBP" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    
+    <div class="box-body">
+        <div class="form-horizontal">
+            <br />
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="~/Portals/BP Portal/HomeBP.aspx" runat="server">Home</a></li>
+                <li class="breadcrumb-item">Profile</li>
+            </ol>
+            <div>
+                <hr />
+            </div>
+        </div>
+    </div>
     <style>
         .container {
             position: relative;

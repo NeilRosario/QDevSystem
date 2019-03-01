@@ -17,6 +17,10 @@ namespace QDevSystem.Online_Application
 
         }
 
+        void InsertOtherProfile()
+        {
+
+        }
 
 
         protected void btnApply_Click(object sender, EventArgs e)

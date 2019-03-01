@@ -1,24 +1,17 @@
 ﻿<%@ Page Title="Jobs" Language="C#" MasterPageFile="~/Portals/BP Portal/BP_Portal.Master" AutoEventWireup="true" CodeBehind="ViewJobsBP.aspx.cs" Inherits="QDevSystem.Portals.BP_Portal.Jobs.ViewJobsBP" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <style>
-        .table-hover {
-        }
-
-        .table-success {
-        }
-    </style>
-
     <div class="row">
         <div class="col-lg-12">
             <div class="box">
                 <div class="box-body">
                     <div class="form-horizontal">
-                        <h1><b>Job List</b></h1>
+                        <br/>
                         
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="~/Portals/BP Portal/Jobs/PostJobBP.aspx" runat="server">Add Job</a></li>
-                            <li class="breadcrumb-item"><a href="~/Portals/BP Portal/HomeBP.aspx" runat="server">Go Back</a></li>
+                            <li class="breadcrumb-item"><a href="~/Portals/BP Portal/HomeBP.aspx" runat="server">Home</a></li>
+                            <li class="breadcrumb-item">Jobs List</li>
+                            <li class="breadcrumb-item"><a href="~/Portals/BP Portal/Jobs/PostJobBP.aspx" runat="server">Post Job</a></li>
                         </ol>
                         <div>
 
@@ -57,11 +50,11 @@
 
                                             <td>
                                                 <a href='JobBPDetails.aspx?ID=<%#Eval("job_id")%>'
-                                                    class="btn btn-xs btn-info" title="View Section Details">Job Details
+                                                    class="btn btn-xs btn-info" title="View Job Details">View Job Details
                                                 </a>
 
                                                 <a href='EditJobBP.aspx?ID=<%#Eval("job_id")%>'
-                                                    class="btn btn-xs btn-warning" title="View Section Details">Edit Job
+                                                    class="btn btn-xs btn-warning" title="Edit Job">Edit Job Details
                                                 </a>
 
                                                 <asp:LinkButton ID="btnDelete" runat="server"

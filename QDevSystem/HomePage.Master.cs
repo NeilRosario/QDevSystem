@@ -69,11 +69,11 @@ namespace QDevSystem
                             }
                             else if (Session["access_type_id"].ToString() == "3")
                             {
-                                Response.Redirect("~/Portals/Admin Portal/Home.aspx");
+                                Response.Redirect("~/Portals/Admin Portal/IT Admin Portal/HomeITAdmin.aspx");
                             }
                             else if (Session["access_type_id"].ToString() == "4")
                             {
-                                Response.Redirect("~/Portals/HR Portal/Home.aspx");
+                                Response.Redirect("~/Portals/Admin Portal/HR Portal/HomeHR.aspx");
                             }
 
                         }
@@ -119,7 +119,7 @@ namespace QDevSystem
                                 Session["business_email"] = Data["business_email"].ToString();
                                 Session["access_type_id"] = Data["access_type_id"].ToString();
                                 Session["company_desc"] = Data["company_desc"].ToString();
-                                
+
                                 Session["company_logo"] = Data["company_logo"].ToString();
                                 Session["b_contactno"] = Data["b_contactno"].ToString();
 
@@ -137,22 +137,17 @@ namespace QDevSystem
                             {
                                 Response.Redirect("~/Portals/Applicant Portal/HomeApplicant.aspx");
                             }
-
-                            else if (Session["access_type_id"].ToString() == "2" )
+                            else if (Session["access_type_id"].ToString() == "2")
                             {
-
-
                                 Response.Redirect("~/Portals/BP Portal/HomeBP.aspx");
-
-
                             }
                             else if (Session["access_type_id"].ToString() == "3")
                             {
-                                Response.Redirect("~/Portals/Admin Portal/Home.aspx");
+                                Response.Redirect("~/Portals/Admin Portal/IT Admin Portal/HomeITAdmin.aspx");
                             }
                             else if (Session["access_type_id"].ToString() == "4")
                             {
-                                Response.Redirect("~/Portals/HR Portal/Home.aspx");
+                                Response.Redirect("~/Portals/Admin Portal/HR Portal/HomeHR.aspx");
                             }
 
                         }
@@ -208,19 +203,19 @@ namespace QDevSystem
                             // If UserType = 3 -> Redirect to Admin Portal
                             if (Session["access_type_id"].ToString() == "1")
                             {
-                                Response.Redirect("~/Portals/Applicant Portal/Home.aspx");
+                                Response.Redirect("~/Portals/Applicant Portal/HomeApplicant.aspx");
                             }
                             else if (Session["access_type_id"].ToString() == "2")
                             {
-                                Response.Redirect("~/Portals/BP Portal/Home.aspx");
+                                Response.Redirect("~/Portals/BP Portal/HomeBP.aspx");
                             }
                             else if (Session["access_type_id"].ToString() == "3")
                             {
-                                Response.Redirect("~/Portals/Admin Portal/Admin/Home.aspx");
+                                Response.Redirect("~/Portals/Admin Portal/IT Admin Portal/HomeITAdmin.aspx");
                             }
                             else if (Session["access_type_id"].ToString() == "4")
                             {
-                                Response.Redirect("~/Portals/Admin Portal/HR/Home.aspx");
+                                Response.Redirect("~/Portals/Admin Portal/HR Portal/HomeHR.aspx");
                             }
 
                         }
@@ -275,19 +270,19 @@ namespace QDevSystem
                             // If UserType = 4 -> Redirect to HR Portal
                             if (Session["access_type_id"].ToString() == "1")
                             {
-                                Response.Redirect("~/Portals/Applicant Portal/Home.aspx");
+                                Response.Redirect("~/Portals/Applicant Portal/HomeApplicant.aspx");
                             }
                             else if (Session["access_type_id"].ToString() == "2")
                             {
-                                Response.Redirect("~/Portals/BP Portal/Home.aspx");
+                                Response.Redirect("~/Portals/BP Portal/HomeBP.aspx");
                             }
                             else if (Session["access_type_id"].ToString() == "3")
                             {
-                                Response.Redirect("~/Portals/Admin Portal/Admin/Home.aspx");
+                                Response.Redirect("~/Portals/Admin Portal/IT Admin Portal/HomeITAdmin.aspx");
                             }
                             else if (Session["access_type_id"].ToString() == "4")
                             {
-                                Response.Redirect("~/Portals/Admin Portal/HR/Home.aspx");
+                                Response.Redirect("~/Portals/Admin Portal/HR Portal/HomeHR.aspx");
                             }
 
                         }

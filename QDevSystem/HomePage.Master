@@ -19,7 +19,26 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
+
+
 <body>
+    <style>
+        .middle {
+            text-align: center;
+        }
+
+        .modal-header, h4, .close {
+            background-color: #5cb85c;
+            color: white !important;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .modal-footer {
+            background-color: #f9f9f9;
+        }
+    </style>
+
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
@@ -53,11 +72,15 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li class="active"><a runat="server" href="~/">QDev</a></li>
+
+                        <li><a runat="server" href="~/">QDev</a></li>
+                        
+                    </ul>
+                     <ul class="nav navbar-nav navbar-right">
                         <li><a onclick="$('#myModal').modal({'backdrop': 'static'});">Log In</a></li>
                     </ul>
                 </div>
+
             </div>
         </div>
 
@@ -128,11 +151,7 @@
     </form>
 
 
-    <style>
-        .middle{
-            text-align:center;
-        }
-    </style>
+
 
 
 

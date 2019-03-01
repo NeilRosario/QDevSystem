@@ -14,6 +14,20 @@
         }
     </style>
 
+    <div class="box-body">
+        <div class="form-horizontal">
+            <br />
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="~/Portals/BP Portal/HomeBP.aspx" runat="server">Home</a></li>
+                <li class="breadcrumb-item"><a href="~/Portals/BP Portal/Profile/ProfileBP.aspx" runat="server">Profile</a></li>
+                <li class="breadcrumb-item">Edit Profile</li>
+            </ol>
+            <div>
+                <hr />
+            </div>
+        </div>
+    </div>
+
     <div class="jumbotron">
         <div class="container">
             <div class="col-md-3">

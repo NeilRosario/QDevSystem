@@ -46,7 +46,7 @@ namespace QDevSystem.Portals.Applicant_Portal.Profile
                                 txtFN.Text = dr["first_name"].ToString();
                                 txtMN.Text = dr["middle_name"].ToString();
                                 txtLN.Text = dr["last_name"].ToString();
-                                
+
                                 txtEmail.Text = dr["a_email"].ToString();
                                 txtDOB.Text = dr["date_of_birth"].ToString();
 
@@ -137,7 +137,7 @@ namespace QDevSystem.Portals.Applicant_Portal.Profile
                         ddlRegion.DataTextField = "region_name";
                         ddlRegion.DataValueField = "region_id";
                         ddlRegion.DataBind();
-                        
+
                         ddlRegion.Items.Insert(0, new ListItem("Select a Region.", ""));
 
                     }
@@ -150,6 +150,7 @@ namespace QDevSystem.Portals.Applicant_Portal.Profile
 
             }
         }
+
 
 
         // Update Existing Data
@@ -173,6 +174,7 @@ namespace QDevSystem.Portals.Applicant_Portal.Profile
                     cmd.Parameters.AddWithValue("@DOB", txtDOB.Text);
 
 
+
                     string fileExt = Path.GetExtension(FileContent.FileName);
                     string id = Guid.NewGuid().ToString();
                     cmd.Parameters.AddWithValue("@PP", id + fileExt);
@@ -180,64 +182,144 @@ namespace QDevSystem.Portals.Applicant_Portal.Profile
 
                     cmd.ExecuteNonQuery();
 
-                    Response.Redirect("ProfileApplicant.aspx");
+
 
                 }
             }
         }
+
+
+
 
         void UpdateProfileApplicantContactDetails()
         {
             using (SqlConnection con = new SqlConnection(Helper.GetConnection()))
             {
                 con.Open();
-                string SQL = @"UPDATE applicant_contact_details SET home_phone=@HN, mobile_number=@MN, alternate_number=@AN WHERE applicant_id =@AID";
-
-                using (SqlCommand cmd = new SqlCommand(SQL, con))
+                // Verifies if record for applicant is already existing.
+                bool exists = false;
+                using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM applicant_contact_details WHERE applicant_id = @applicant_id", con))
                 {
-                    cmd.Parameters.AddWithValue("@AID", Session["applicant_id"].ToString());
-
-                    cmd.Parameters.AddWithValue("@HN", txtHomeNo.Text);
-                    cmd.Parameters.AddWithValue("@MN", txtMobileNo.Text);
-                    cmd.Parameters.AddWithValue("@AN", txtAltNo.Text);
-
-                    cmd.ExecuteNonQuery();
-
-                    Response.Redirect("ProfileApplicant.aspx");
-
+                    cmd.Parameters.AddWithValue("@applicant_id", Session["applicant_id"].ToString());
+                    exists = (int)cmd.ExecuteScalar() > 0;
                 }
+
+                //if exists, update existing record (old user)
+                if (exists)
+                {
+                    string SQL = @"UPDATE applicant_contact_details SET home_phone=@HN, mobile_number=@MN, alternate_mobile=@AN WHERE applicant_id =@AID";
+
+                    using (SqlCommand cmd = new SqlCommand(SQL, con))
+                    {
+                        cmd.Parameters.AddWithValue("@AID", Session["applicant_id"].ToString());
+
+                        cmd.Parameters.AddWithValue("@HN", txtHomeNo.Text);
+                        cmd.Parameters.AddWithValue("@MN", txtMobileNo.Text);
+                        cmd.Parameters.AddWithValue("@AN", txtAltNo.Text);
+
+                        cmd.ExecuteNonQuery();
+
+                    }
+                }
+
+                //if not, new record will be made to complete registration (new user)
+                else
+                {
+                    string SQL = @"INSERT applicant_contact_details (applicant_id, home_phone, mobile_number, alternate_mobile) 
+                                   VALUES (@applicant_id, @home_phone, @mobile_number, @alternate_mobile)";
+
+                    using (SqlCommand cmd = new SqlCommand(SQL, con))
+                    {
+                        cmd.Parameters.AddWithValue("@applicant_id", Session["applicant_id"].ToString());
+
+                        cmd.Parameters.AddWithValue("@home_phone", txtHomeNo.Text);
+                        cmd.Parameters.AddWithValue("@mobile_number", txtMobileNo.Text);
+                        cmd.Parameters.AddWithValue("@alternate_mobile", txtAltNo.Text);
+
+                        cmd.ExecuteNonQuery();
+
+
+
+                    }
+                }
+                    
+                    
             }
         }
+    
 
         void UpdateViewProfileApplicantAddress()
         {
             using (SqlConnection con = new SqlConnection(Helper.GetConnection()))
             {
                 con.Open();
-                string SQL = @"UPDATE applicant_address SET region_id=@RI, no_bldg_street=@bldg, apartment_no=@appNo, street_name=@street, zip_code=@zip, city_name=@city WHERE applicant_id =@AID";
-
-                using (SqlCommand cmd = new SqlCommand(SQL, con))
+                // Verifies if record for applicant is already existing.
+                bool exists = false;
+                using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM applicant_address WHERE applicant_id = @applicant_id", con))
                 {
-                    cmd.Parameters.AddWithValue("@AID", Session["applicant_id"].ToString());
-
-                    cmd.Parameters.AddWithValue("@RI", ddlRegion.Text);
-                    cmd.Parameters.AddWithValue("@bldg", txtBldgNo.Text);
-                    cmd.Parameters.AddWithValue("@appNo", txtAptNo.Text);
-                    cmd.Parameters.AddWithValue("@street", txtStreet.Text);
-                    cmd.Parameters.AddWithValue("@zip", txtZip.Text);
-                    cmd.Parameters.AddWithValue("@city", txtCity.Text);
-
-
-                    cmd.ExecuteNonQuery();
-
-                    Response.Redirect("ProfileApplicant.aspx");
+                    cmd.Parameters.AddWithValue("@applicant_id", Session["applicant_id"].ToString());
+                    exists = (int)cmd.ExecuteScalar() > 0;
                 }
+
+                //if exists, update existing record (old user)
+                if (exists)
+                {
+                    string SQL = @"UPDATE applicant_address SET region_id=@RI, no_bldg_street=@bldg, apartment_no=@appNo, street_name=@street, zip_code=@zip, city_name=@city WHERE applicant_id =@AID";
+
+                    using (SqlCommand cmd = new SqlCommand(SQL, con))
+                    {
+                        cmd.Parameters.AddWithValue("@AID", Session["applicant_id"].ToString());
+
+                        cmd.Parameters.AddWithValue("@RI", ddlRegion.Text);
+                        cmd.Parameters.AddWithValue("@bldg", txtBldgNo.Text);
+                        cmd.Parameters.AddWithValue("@appNo", txtAptNo.Text);
+                        cmd.Parameters.AddWithValue("@street", txtStreet.Text);
+                        cmd.Parameters.AddWithValue("@zip", txtZip.Text);
+                        cmd.Parameters.AddWithValue("@city", txtCity.Text);
+
+
+                        cmd.ExecuteNonQuery();
+
+
+                    }
+                }
+
+                //if not, new record will be made to complete registration (new user)
+                else
+                {
+                    string SQL = @"INSERT applicant_address (applicant_id, region_id, no_bldg_street, apartment_no, street_name, zip_code, city_name) 
+                                   VALUES (@applicant_id, @region_id, @no_bldg_street, @apartment_no, @street_name, @zip_code, @city_name)";
+
+                    using (SqlCommand cmd = new SqlCommand(SQL, con))
+                    {
+                        cmd.Parameters.AddWithValue("@applicant_id", Session["applicant_id"].ToString());
+
+                        cmd.Parameters.AddWithValue("@region_id", ddlRegion.Text);
+                        cmd.Parameters.AddWithValue("@no_bldg_street", txtBldgNo.Text);
+                        cmd.Parameters.AddWithValue("@apartment_no", txtAptNo.Text);
+                        cmd.Parameters.AddWithValue("@street_name", txtStreet.Text);
+                        cmd.Parameters.AddWithValue("@zip_code", txtZip.Text);
+                        cmd.Parameters.AddWithValue("@city_name", txtCity.Text);
+
+                        cmd.ExecuteNonQuery();
+
+
+
+                    }
+                }
+                    
             }
         }
 
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
+
+
+            UpdateProfileApplicant();
+            UpdateProfileApplicantContactDetails();
+            UpdateViewProfileApplicantAddress();
+            Response.Redirect("ProfileApplicant.aspx");
 
         }
     }

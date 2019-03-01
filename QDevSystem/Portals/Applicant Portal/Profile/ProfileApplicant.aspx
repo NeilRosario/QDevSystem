@@ -12,7 +12,20 @@
             width: 100%;
             height: auto;
         }
+
     </style>
+    <div class="box-body">
+        <div class="form-horizontal">
+            <br />
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="~/Portals/Applicant Portal/HomeApplicant.aspx" runat="server">Home</a></li>
+                <li class="breadcrumb-item">Profile</li>
+            </ol>
+            <div>
+                <hr />
+            </div>
+        </div>
+    </div>
 
     <div class="jumbotron">
         <div class="container">
@@ -74,7 +87,9 @@
                         OnClick="btnUpdate_Click"
                         Text="Update"></asp:Button>
 
-                    <a href="~/Portals/BP Portal/HomeBP.aspx" runat="server" class="btn btn-secondary">Go Back</a>
+                    <a href="~/Portals/Applicant Portal/HomeApplicant.aspx" runat="server" class="btn btn-secondary">View Documents</a>
+                    <a href="~/Portals/Applicant Portal/HomeApplicant.aspx" runat="server" class="btn btn-secondary">Go Back</a>
+                    
                 </div>
 
             </div>
@@ -114,6 +129,8 @@
                     <br />
                     <asp:Label runat="server" ID="lblCity" />
                 </div>
+
+                
 
             </div>
         </div>
