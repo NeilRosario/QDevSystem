@@ -7,15 +7,15 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace QDevSystem.Portals.BP_Portal.Jobs
+namespace QDevSystem.Portals.Admin_Portal.HR_Portal.Jobs
 {
-    public partial class JobBPDetails : System.Web.UI.Page
+    public partial class JobDetailsHR : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.QueryString["ID"] == null)
             {
-                Response.Redirect("ViewJobsBP.aspx");
+                Response.Redirect("ViewJobsApplicant.aspx");
             }
             else
             {
@@ -25,24 +25,25 @@ namespace QDevSystem.Portals.BP_Portal.Jobs
                 {
                     if (!IsPostBack)
                     {
-                        GetID(id);
+                        GetJobTitle(id);
                         ViewJobBPDetails(id);
+                        GetID(id);
                     }
 
                 }
                 else
                 {
-                    Response.Redirect("ViewJobsBP.aspx");
+                    Response.Redirect("ViewJobsApplicant.aspx");
                 }
             }
 
         }
 
-        void GetID(int ID)
+        void GetJobTitle(int ID)
         {
             using (SqlConnection con = new SqlConnection(Helper.GetConnection()))
             {
-                string SQL = @"SELECT job_title  AS 'Job Title' FROM job_posting  WHERE job_id=@JID";
+                string SQL = @"SELECT job_title  AS 'Job Title' FROM job_posting WHERE job_id=@JID";
                 con.Open();
                 using (SqlCommand com = new SqlCommand(SQL, con))
                 {
@@ -60,7 +61,36 @@ namespace QDevSystem.Portals.BP_Portal.Jobs
                         }
                         else
                         {
-                            Response.Redirect("ViewJobsBP.aspx");
+                            Response.Redirect("ViewJobsApplicant.aspx");
+                        }
+                    }
+                }
+            }
+
+        }
+
+        void GetID(int ID)
+        {
+            using (SqlConnection con = new SqlConnection(Helper.GetConnection()))
+            {
+                string SQL = @"SELECT job_id FROM job_posting WHERE job_id=@JID";
+                con.Open();
+                using (SqlCommand com = new SqlCommand(SQL, con))
+                {
+                    com.Parameters.AddWithValue("@JID", ID);
+
+                    using (SqlDataReader dr = com.ExecuteReader())
+                    {
+                        if (dr.HasRows)
+                        {
+                            while (dr.Read())
+                            {
+                                ltID.Text = dr["job_id"].ToString();
+                            }
+                        }
+                        else
+                        {
+                            Response.Redirect("ViewJobsApplicant.aspx");
                         }
                     }
                 }

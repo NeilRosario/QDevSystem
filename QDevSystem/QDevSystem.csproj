@@ -137,7 +137,8 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="Portals\Admin Portal\HR Portal\HomeHR.aspx" />
-    <Content Include="Portals\Admin Portal\IT Admin Portal\Admin\ViewAdminDetails.aspx" />
+    <Content Include="Portals\Admin Portal\HR Portal\Jobs\JobDetailsHR.aspx" />
+    <Content Include="Portals\Admin Portal\HR Portal\Jobs\ViewJobsHR.aspx" />
     <Content Include="Portals\Admin Portal\IT Admin Portal\Admin\ViewAdmins.aspx" />
     <Content Include="Portals\Admin Portal\IT Admin Portal\Applicant\ApplicantDetailsAdmin.aspx" />
     <Content Include="Portals\Admin Portal\IT Admin Portal\Applicant\ViewApplicantsAdmin.aspx" />
@@ -155,6 +156,7 @@
     <Content Include="Portals\Applicant Portal\Profile\EditDocumentsApplicant.aspx" />
     <Content Include="Portals\Applicant Portal\Profile\EditProfileApplicant.aspx" />
     <Content Include="Portals\Applicant Portal\Profile\ProfileApplicant.aspx" />
+    <Content Include="Portals\BP Portal\Applications\ViewApplicationsBP.aspx" />
     <Content Include="Portals\BP Portal\BP_Portal.Master" />
     <Content Include="Portals\Applicant Portal\Applicant_Portal.Master" />
     <Content Include="Portals\Admin Portal\HR Portal\HR_Portal.Master" />
@@ -245,12 +247,19 @@
     <Compile Include="Portals\Admin Portal\HR Portal\HR_Portal.Master.designer.cs">
       <DependentUpon>HR_Portal.Master</DependentUpon>
     </Compile>
-    <Compile Include="Portals\Admin Portal\IT Admin Portal\Admin\ViewAdminDetails.aspx.cs">
-      <DependentUpon>ViewAdminDetails.aspx</DependentUpon>
+    <Compile Include="Portals\Admin Portal\HR Portal\Jobs\JobDetailsHR.aspx.cs">
+      <DependentUpon>JobDetailsHR.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Portals\Admin Portal\IT Admin Portal\Admin\ViewAdminDetails.aspx.designer.cs">
-      <DependentUpon>ViewAdminDetails.aspx</DependentUpon>
+    <Compile Include="Portals\Admin Portal\HR Portal\Jobs\JobDetailsHR.aspx.designer.cs">
+      <DependentUpon>JobDetailsHR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Portals\Admin Portal\HR Portal\Jobs\ViewJobsHR.aspx.cs">
+      <DependentUpon>ViewJobsHR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portals\Admin Portal\HR Portal\Jobs\ViewJobsHR.aspx.designer.cs">
+      <DependentUpon>ViewJobsHR.aspx</DependentUpon>
     </Compile>
     <Compile Include="Portals\Admin Portal\IT Admin Portal\Admin\ViewAdmins.aspx.cs">
       <DependentUpon>ViewAdmins.aspx</DependentUpon>
@@ -385,6 +394,13 @@
     <Compile Include="Portals\Applicant Portal\Profile\ProfileApplicant.aspx.designer.cs">
       <DependentUpon>ProfileApplicant.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Portals\BP Portal\Applications\ViewApplicationsBP.aspx.cs">
+      <DependentUpon>ViewApplicationsBP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portals\BP Portal\Applications\ViewApplicationsBP.aspx.designer.cs">
+      <DependentUpon>ViewApplicationsBP.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Portals\BP Portal\BP_Portal.Master.cs">
       <DependentUpon>BP_Portal.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -469,8 +485,8 @@
     <Folder Include="Files\CV\" />
     <Folder Include="Files\img\" />
     <Folder Include="images\" />
+    <Folder Include="Portals\Admin Portal\HR Portal\Applications\" />
     <Folder Include="Portals\Applicant Portal\Applications\" />
-    <Folder Include="Portals\BP Portal\Applications\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

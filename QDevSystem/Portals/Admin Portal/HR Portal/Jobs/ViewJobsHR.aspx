@@ -1,14 +1,15 @@
-﻿<%@ Page Title="Job List" Language="C#" MasterPageFile="~/Portals/Admin Portal/IT Admin Portal/IT_Admin_Portal.Master" AutoEventWireup="true" CodeBehind="ViewJobsAdmin.aspx.cs" Inherits="QDevSystem.Portals.Admin_Portal.IT_Admin_Portal.Jobs.ViewJobsAdmin" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Portals/Admin Portal/HR Portal/HR_Portal.Master" AutoEventWireup="true" CodeBehind="ViewJobsHR.aspx.cs" Inherits="QDevSystem.Portals.Admin_Portal.HR_Portal.Jobs.ViewJobsHR" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-        <div class="row">
+    <div class="row">
         <div class="col-lg-12">
             <div class="box">
                 <div class="box-body">
                     <div class="form-horizontal">
                         <br />
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="~/Portals/Admin Portal/IT Admin Portal/HomeITAdmin.aspx" runat="server">Home</a></li>
-                            <li class="breadcrumb-item">Job List</li>
+                            <li class="breadcrumb-item"><a href="~/Portals/Admin Portal/HR Portal/HomeHR.aspx" runat="server">Home</a></li>
+                            <li class="breadcrumb-item">Pending Job List</li>
                         </ol>
                         <div>
                             <hr />
@@ -25,13 +26,13 @@
                             </thead>
                             <tbody>
                                 <asp:ListView ID="lvJobs" runat="server"
-                                    OnPagePropertiesChanging="lvJobs_PagePropertiesChanging">
-                                    <%--OnItemCommand="lvJobs_ItemCommand"--%>
+                                    OnPagePropertiesChanging="lvJobs_PagePropertiesChanging"
+                                    OnItemCommand="lvJobs_ItemCommand">
                                     <ItemTemplate>
                                         <tr>
                                             <asp:Literal ID="ltJobID" runat="server"
                                                 Text='<%#Eval("job_id") %>' Visible="false" />
-                                            <td><%#Eval("Description") %></td>
+                                            <td><%#Eval("description") %></td>
                                             <td><%#Eval("company_name") %></td>
                                             <td><%#Eval("job_title") %></td>
                                             <td><%#Eval("job_description") %></td>
@@ -39,7 +40,8 @@
 
 
                                             <td>
-                                                <a href='JobDetailsAdmin.aspx?ID=<%#Eval("job_id")%>'
+
+                                                <a href='JobDetailsHR.aspx?ID=<%#Eval("job_id")%>'
                                                     class="btn btn-xs btn-info" title="View Job Details">Job Details
                                                 </a>
 
@@ -59,18 +61,18 @@
                             </tbody>
                         </table>
                         <div class="col-lg-offset-5">
-                             <asp:DataPager ID="dpJobs" runat="server"
-                                    PagedControlID="lvJobs" PageSize="10">
-                                   <Fields>
-                                       <asp:NumericPagerField
-                                     ButtonType="Button"
-                                     CurrentPageLabelCssClass="btn btn"
-                                     NumericButtonCssClass="btn btn"
-                                     NextPreviousButtonCssClass="btn btn-default"
-                                     ButtonCount="5" />
-                                   </Fields>
-                          </asp:DataPager>
-                           </div>
+                            <asp:DataPager ID="dpJobs" runat="server"
+                                PagedControlID="lvJobs" PageSize="10">
+                                <Fields>
+                                    <asp:NumericPagerField
+                                        ButtonType="Button"
+                                        CurrentPageLabelCssClass="btn btn"
+                                        NumericButtonCssClass="btn btn"
+                                        NextPreviousButtonCssClass="btn btn-default"
+                                        ButtonCount="5" />
+                                </Fields>
+                            </asp:DataPager>
+                        </div>
                         <script>
                             $(document).ready(function () {
                                 $("#myInput").on("keyup", function () {

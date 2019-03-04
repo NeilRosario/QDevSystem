@@ -21,9 +21,9 @@ namespace QDevSystem.Portals.Admin_Portal.IT_Admin_Portal.BP
             else
             {
                 int compID = 0;
-                bool validjobid = int.TryParse(Request.QueryString["ID"].ToString(), out compID);
+                bool validcompid = int.TryParse(Request.QueryString["ID"].ToString(), out compID);
 
-                if (validjobid)
+                if (validcompid)
                 {
                     if (!IsPostBack)
                     {

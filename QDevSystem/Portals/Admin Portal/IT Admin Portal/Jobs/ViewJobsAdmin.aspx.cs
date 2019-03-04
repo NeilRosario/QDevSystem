@@ -32,7 +32,7 @@ namespace QDevSystem.Portals.Admin_Portal.IT_Admin_Portal.Jobs
                             INNER JOIN job_post_status s 
                             ON j.job_post_status_id = s.job_post_status_id
                             INNER JOIN business_access b
-                            ON j.b_access_id = b.b_access_id";
+                            ON j.b_access_id = b.b_access_id ORDER BY s.Description DESC";
 
                 using (SqlCommand com = new SqlCommand(cmd, con))
                 {

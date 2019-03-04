@@ -27,7 +27,7 @@ namespace QDevSystem.Portals.Admin_Portal.IT_Admin_Portal.BP
             {
                 con.Open();
                 string cmd = @"SELECT b_access_id, company_name, b_contactno, business_email " +
-                               "FROM business_access";
+                               "FROM business_access ORDER BY company_name ASC";
 
 
                 using (SqlCommand com = new SqlCommand(cmd, con))

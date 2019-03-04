@@ -20,7 +20,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="~/Portals/Applicant Portal/HomeApplicant.aspx" runat="server">Home</a></li>
                 <li class="breadcrumb-item"><a href="~/Portals/Applicant Portal/Companies/ViewCompanyApplicant.aspx" runat="server">Company List</a></li>
-                <li class="breadcrumb-item"><asp:Literal ID="ltCompID" runat="server" /> 's Company Details</li>
+                <li class="breadcrumb-item"><asp:Literal ID="ltCompID" runat="server" /></li>
             </ol>
             <div>
 

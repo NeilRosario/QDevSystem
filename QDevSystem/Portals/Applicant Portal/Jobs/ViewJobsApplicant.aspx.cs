@@ -32,7 +32,7 @@ namespace QDevSystem.Portals.Applicant_Portal.Jobs
                             INNER JOIN job_post_status s 
                             ON j.job_post_status_id = s.job_post_status_id
                             INNER JOIN business_access b
-                            ON j.b_access_id = b.b_access_id";
+                            ON j.b_access_id = b.b_access_id ORDER BY s.Description DESC";
 
                 using (SqlCommand com = new SqlCommand(cmd, con))
                 {
@@ -49,35 +49,7 @@ namespace QDevSystem.Portals.Applicant_Portal.Jobs
             }
         }
 
-        protected void lvJobs_ItemCommand(object sender, ListViewCommandEventArgs e)
-        {
 
-            Literal ltJobID = (Literal)e.Item.FindControl("ltJobID");
-
-            if (e.CommandName == "sendapplication")
-            {
-
-                using (SqlConnection con = new SqlConnection(Helper.GetConnection()))
-                {
-                    con.Open();
-                    string SQL = @"INSERT INTO job_application (job_id, applicant_id, status_id, date_applied)
-                                   VALUES (@JID, @AID, @SID, @DateApplied)";
-
-                    using (SqlCommand cmd = new SqlCommand(SQL, con))
-                    {
-                        cmd.Parameters.AddWithValue("@JID", ltJobID.Text);
-                        cmd.Parameters.AddWithValue("@AID", Session["applicant_id"].ToString());
-                        cmd.Parameters.AddWithValue("@SID", 1);
-                        cmd.Parameters.AddWithValue("@DateApplied", DateTime.Now);
-                        cmd.ExecuteNonQuery();
-
-                        Response.Redirect("ViewCompanyJob.aspx");
-                    }
-                }
-            }
-
-
-        }
 
         protected void lvJobs_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e)
         {

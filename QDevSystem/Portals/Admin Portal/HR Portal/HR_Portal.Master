@@ -54,14 +54,14 @@
                 </div>
                 <div class="navbar-collapse collapse">                    
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/Portals/BP Portal/Jobs/ViewJobsBP.aspx">Jobs</a></li>
+                        <li><a runat="server" href="~/Portals/Admin Portal/HR Portal/Jobs/ViewJobsHR.aspx">Jobs</a></li>
                         <li><a runat="server" href="~/About">Applications</a></li>                        
                     </ul>
                     <ul class="nav navbar-nav navbar-left">
-                        <li><a runat="server" href="~/Portals/BP Portal/Profile/ProfileBP.aspx"><asp:Label runat="server" id="lblShowUser"></asp:Label></a></li>
+                        <li><a runat="server" href="#"><asp:Label runat="server" id="lblShowUser"></asp:Label></a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a runat="server" href="~/Portals/BP Portal/HomeBP.aspx">Home</a></li>
+                        <li><a runat="server" href="~/Portals/Admin Portal/HR Portal/HomeHR.aspx">Home</a></li>
                         <li><asp:LinkButton runat="server" id="btnLogOut" onclick="Logoutclick">Log Out</asp:LinkButton></li>
                     </ul>
                 </div>

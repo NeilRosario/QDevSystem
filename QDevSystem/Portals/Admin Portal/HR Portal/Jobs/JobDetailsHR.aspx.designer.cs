@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QDevSystem.Portals.BP_Portal.Jobs {
+namespace QDevSystem.Portals.Admin_Portal.HR_Portal.Jobs {
     
     
-    public partial class JobBPDetails {
+    public partial class JobDetailsHR {
         
         /// <summary>
         /// ltJobID control.
@@ -20,6 +20,15 @@ namespace QDevSystem.Portals.BP_Portal.Jobs {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal ltJobID;
+        
+        /// <summary>
+        /// ltID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltID;
         
         /// <summary>
         /// ltJID control.

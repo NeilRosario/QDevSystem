@@ -19,7 +19,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="~/Portals/Admin Portal/IT Admin Portal/HomeITAdmin.aspx" runat="server">Home</a></li>
                 <li class="breadcrumb-item"><a href="~/Portals/Admin Portal/IT Admin Portal/BP/ViewCompaniesAdmin.aspx" runat="server">Company List</a></li>
-                <li class="breadcrumb-item"><asp:Literal ID="ltCompID" runat="server" /> 's Company Details</li>
+                <li class="breadcrumb-item"><asp:Literal ID="ltCompID" runat="server" /></li>
             </ol>
             <div>
 
@@ -28,7 +28,6 @@
         </div>
     </div>
     <div class="jumbotron">
-
         <div class="container">
             <div class="col-md-3">
                 <asp:Image runat="server" ID="imgCompanyLogoProfile" class="image" />

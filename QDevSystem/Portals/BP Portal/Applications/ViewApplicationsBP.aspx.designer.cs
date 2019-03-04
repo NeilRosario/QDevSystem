@@ -7,27 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QDevSystem.Portals.Admin_Portal.IT_Admin_Portal.Admin {
+namespace QDevSystem.Portals.BP_Portal.Applications {
     
     
-    public partial class ViewAdmins {
+    public partial class ViewApplicationsBP {
         
         /// <summary>
-        /// lvAdmins control.
+        /// lvJobs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lvAdmins;
+        protected global::System.Web.UI.WebControls.ListView lvJobs;
         
         /// <summary>
-        /// dpAdmins control.
+        /// dpJobs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataPager dpAdmins;
+        protected global::System.Web.UI.WebControls.DataPager dpJobs;
     }
 }

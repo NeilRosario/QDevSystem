@@ -1,14 +1,15 @@
-﻿<%@ Page Title="Job Details" Language="C#" MasterPageFile="~/Portals/BP Portal/BP_Portal.Master" AutoEventWireup="true" CodeBehind="JobBPDetails.aspx.cs" Inherits="QDevSystem.Portals.BP_Portal.Jobs.JobBPDetails" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Portals/Admin Portal/HR Portal/HR_Portal.Master" AutoEventWireup="true" CodeBehind="JobDetailsHR.aspx.cs" Inherits="QDevSystem.Portals.Admin_Portal.HR_Portal.Jobs.JobDetailsHR" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="box-body">
         <div class="form-horizontal">
             <br />
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="~/Portals/BP Portal/HomeBP.aspx" runat="server">Home</a></li>
-                <li class="breadcrumb-item"><a href="~/Portals/BP Portal/Jobs/ViewJobsBP.aspx" runat="server">Job List</a></li>
+                <li class="breadcrumb-item"><a href="~/Portals/Admin Portal/HR Portal/HomeHR.aspx" runat="server">Home</a></li>
+                <li class="breadcrumb-item"><a href="~/Portals/Admin Portal/HR Portal/Jobs/ViewJobsHR.aspx" runat="server">Job List</a></li>
                 <li class="breadcrumb-item">
                     <asp:Literal ID="ltJobID" runat="server" /></li>
+
+                <asp:Literal ID="ltID" runat="server" Visible="false" />
             </ol>
             <div>
                 <hr />
@@ -58,7 +59,9 @@
                 <asp:Label runat="server" ID="lblJobLocation" />
             </div>
 
-            <a href="~/Portals/BP Portal/Jobs/ViewJobsBP.aspx" runat="server" class="btn btn-secondary">Go Back</a>
+            <div class="col-lg-12">
+                <a href="~/Portals/Admin Portal/IT Admin Portal/Jobs/ViewJobsAdmin.aspx" runat="server" class="btn btn-secondary">Go Back</a>
+            </div>
 
 
         </div>
